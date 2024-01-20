@@ -18,11 +18,8 @@ void prog_exit(int signo)
 int main(int argc, char* argv[])
 {
     //设置信号处理
-    signal(SIGCHLD, SIG_DFL);
-    signal(SIGPIPE, SIG_IGN);
     signal(SIGINT, prog_exit);
     signal(SIGKILL, prog_exit);
-    signal(SIGTERM, prog_exit);
 
     short port = 12345;
 
